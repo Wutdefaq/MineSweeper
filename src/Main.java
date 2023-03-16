@@ -146,11 +146,12 @@ public class Main {
             for (int i = -1; i < 2; i++) {
                 for (int j = -1; j < 2; j++) {
                     if (x + i >= 0 && x + i < m_row && y + j >= 0 && y + j < m_col) {
-                        backField[x + i][y + j]++;
+                        if(backField[x + i][y + j] != 'm') {
+                            backField[x + i][y + j]++;
+                        }
                     }
                 }
             }
-            backField[x][y] = 'm';
             count++;
         }
 
